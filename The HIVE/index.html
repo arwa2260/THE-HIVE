@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE HIVE | Enterprise Cybersecurity Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0066cc;
+            --hover-blue: #004999;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --dark-text: #0f172a;
+            --gray-text: #475569;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--dark-text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .top-bar {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 8px 30px;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+        .lang-btn:hover { background-color: var(--hover-blue); }
+
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+        }
+
+        /* HIVE Vector Logo Styling */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .hive-logo-svg {
+            width: 42px;
+            height: 42px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: 1.5px;
+            display: flex;
+            flex-direction: column;
+            line-height: 0.9;
+        }
+
+        .logo-text span {
+            font-size: 11px;
+            color: var(--primary-blue);
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        nav a {
+            color: var(--dark-text);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        body[dir="rtl"] nav a {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+        nav a:hover { color: var(--primary-blue); }
+
+        .btn-nav {
+            background-color: var(--primary-blue);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 6px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(230, 242, 255, 0.95)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 { font-size: 42px; margin-bottom: 15px; }
+        .hero h1 span { color: var(--primary-blue); }
+        .hero p { font-size: 18px; color: var(--gray-text); max-width: 750px; margin: 0 auto 30px; line-height: 1.6; }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,102,204,0.25);
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        footer {
+            background-color: var(--white);
+            border-top: 1px solid var(--border-color);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--gray-text);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div>
+            <span><i class="fa-solid fa-phone"></i> Hotline: <strong>19808</strong></span>
+        </div>
+        <div>
+            <button class="lang-btn" onclick="toggleLanguage()"><i class="fa-solid fa-globe"></i> <span id="lang-btn-text">العربية</span></button>
+        </div>
+    </div>
+
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo-container">
+                <svg class="hive-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" stroke="#0066cc" stroke-width="6" fill="none"/>
+                    <polygon points="50,58 63,65 63,80 50,87 37,80 37,65" fill="#0066cc"/>
+                    <polygon points="35,66 48,73 48,88 35,95 22,88 22,73" fill="#0066cc" opacity="0.8"/>
+                    <polygon points="65,66 78,73 78,88 65,95 52,88 52,73" fill="#0066cc" opacity="0.8"/>
+                    <circle cx="82" cy="42" r="6" fill="#0d9488"/>
+                </svg>
+                <div class="logo-text">
+                    <span>THE</span>
+                    HIVE
+                </div>
+            </a>
+            <nav>
+                <a href="index.html" data-key="nav_home">Home</a>
+                <a href="services.html" data-key="nav_services">Services & Defense</a>
+                <a href="courses.html" data-key="nav_courses">Courses & Training</a>
+                <a href="services.html" class="btn-nav" data-key="nav_apply">Apply Now →</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1 data-key="hero_title">Enterprise Cyber Defense & <span>Threat Intelligence</span></h1>
+        <p data-key="hero_desc">THE HIVE delivers next-generation penetration testing, 24/7 Blue Team SOC surveillance, and elite cybersecurity staffing to safeguard critical infrastructure.</p>
+        <a href="services.html" class="btn-primary"><span data-key="hero_btn">Explore Our Services</span></a>
+    </section>
+
+    <footer>
+        <p data-key="copyright">&copy; 2026 THE HIVE Cybersecurity Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                nav_home: "Home",
+                nav_services: "Services & Defense",
+                nav_courses: "Courses & Training",
+                nav_apply: "Apply Now →",
+                hero_title: 'Enterprise Cyber Defense & <span>Threat Intelligence</span>',
+                hero_desc: "THE HIVE delivers next-generation penetration testing, 24/7 Blue Team SOC surveillance, and elite cybersecurity staffing.",
+                hero_btn: "Explore Our Services",
+                copyright: "© 2026 THE HIVE Cybersecurity Solutions. All Rights Reserved."
+            },
+            ar: {
+                nav_home: "الرئيسية",
+                nav_services: "الخدمات والحماية",
+                nav_courses: "الكورسات والتدريب",
+                nav_apply: "قدم الآن ←",
+                hero_title: 'الدفاع السيبراني للشركات و <span>استخبارات التهديدات</span>',
+                hero_desc: "تقدم THE HIVE حلول حماية متكاملة، ومراقبة للأنظمة على مدار الساعة، وتوفير كوادر أمنية احترافية.",
+                hero_btn: "استكشف خدماتنا",
+                copyright: "© 2026 THE HIVE للحلول الأمنية. جميع الحقوق محفوظة."
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById('lang-btn-text').innerText = currentLang === 'en' ? 'العربية' : 'English';
+
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[currentLang][key]) {
+                    element.innerHTML = translations[currentLang][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
