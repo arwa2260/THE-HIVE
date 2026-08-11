@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy & Careers | THE HIVE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0066cc;
+            --hover-blue: #004999;
+            --dark-navy: #0f172a;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --gray-text: #64748b;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg-light); color: var(--dark-navy); margin: 0; padding: 0; }
+        
+        /* Top Navigation Bar */
+        header { background: white; padding: 15px 5%; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo-group { display: flex; align-items: center; gap: 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--primary-blue); font-weight: bold; font-size: 14px; background: #eff6ff; padding: 8px 14px; border-radius: 6px; border: 1px solid #bfdbfe; transition: 0.3s; }
+        .back-link:hover { background: var(--primary-blue); color: white; }
+        .logo { font-size: 20px; font-weight: 800; color: var(--dark-navy); text-decoration: none; }
+        
+        nav a { margin-left: 20px; text-decoration: none; color: var(--dark-navy); font-weight: 600; font-size: 14px; }
+        nav a:hover { color: var(--primary-blue); }
+
+        /* Hero */
+        .hero-acad { background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; color: white; padding: 60px 20px; text-align: center; }
+        .hero-acad h1 { color: #38bdf8; margin-bottom: 10px; font-size: 34px; }
+        .hero-acad p { color: #cbd5e1; max-width: 680px; margin: 0 auto; line-height: 1.6; }
+
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .section-title { text-align: center; color: var(--dark-navy); font-size: 28px; margin-bottom: 8px; }
+        .section-subtitle { text-align: center; color: var(--gray-text); margin-bottom: 35px; font-size: 15px; }
+
+        /* Statistics Bar */
+        .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; background: white; border: 1px solid var(--border-color); padding: 30px 20px; border-radius: 12px; margin-bottom: 40px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .stat-box i { font-size: 30px; color: var(--primary-blue); margin-bottom: 8px; }
+        .stat-box h2 { font-size: 30px; margin: 0; color: var(--dark-navy); font-weight: 800; }
+        .stat-box p { margin: 5px 0 0; color: var(--gray-text); font-size: 14px; font-weight: 600; }
+
+        /* Global Recognition Banner */
+        .global-banner { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 35px; border-radius: 12px; margin-bottom: 50px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+        .global-text { max-width: 620px; }
+        .global-text h3 { margin: 0 0 10px; font-size: 24px; color: #38bdf8; }
+        .global-text p { margin: 0; color: #cbd5e1; font-size: 14px; line-height: 1.6; }
+        .global-badge { background: rgba(56, 189, 248, 0.1); border: 1px solid #38bdf8; padding: 15px 25px; border-radius: 10px; text-align: center; }
+        .global-badge h4 { margin: 0; font-size: 30px; color: white; }
+        .global-badge span { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Grid for Courses */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-body { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-body h3 { margin: 0 0 10px; color: var(--dark-navy); font-size: 20px; }
+        .card-body p { color: var(--gray-text); font-size: 14px; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+
+        .course-meta { display: flex; justify-content: space-between; background: #f1f5f9; padding: 10px 15px; border-radius: 8px; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 20px; }
+        .course-meta i { color: var(--primary-blue); margin-right: 5px; }
+
+        .btn-apply { display: block; text-align: center; background: var(--primary-blue); color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; transition: 0.3s; }
+        .btn-apply:hover { background: var(--hover-blue); }
+
+        /* Blue Team Careers Section */
+        .careers-section { background: white; border-radius: 12px; border: 1px solid var(--border-color); padding: 40px 30px; margin-bottom: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .badge-open { display: inline-block; background: #dcfce7; color: #166534; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 12px; margin-bottom: 15px; }
+        
+        .job-card { background: var(--bg-light); border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .job-info h4 { margin: 0 0 5px; font-size: 18px; color: var(--dark-navy); }
+        .job-info p { margin: 0; color: var(--gray-text); font-size: 13px; }
+
+        /* Application Form Section */
+        .form-section { background: white; border-radius: 12px; border: 1px solid var(--border-color); padding: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; font-size: 14px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-size: 14px; }
+        .file-upload-box { border: 2px dashed #cbd5e1; padding: 25px; text-align: center; border-radius: 8px; background: #f8fafc; cursor: pointer; }
+        .file-upload-box i { font-size: 32px; color: var(--primary-blue); margin-bottom: 10px; }
+
+        footer { background: var(--dark-navy); color: #94a3b8; text-align: center; padding: 25px; margin-top: 60px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-group">
+            <a href="index.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </a>
+            <a href="index.html" class="logo">THE HIVE ACADEMY</a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services & Contracts</a>
+            <a href="courses.html">Academy & Careers</a>
+        </nav>
+    </header>
+
+    <section class="hero-acad">
+        <h1>THE HIVE Cybersecurity Academy</h1>
+        <p>Empowering world-class cybersecurity specialists with internationally recognized certifications and direct career pathways.</p>
+    </section>
+
+    <div class="container">
+
+        <div class="stats-bar">
+            <div class="stat-box">
+                <i class="fa-solid fa-earth-americas"></i>
+                <h2>18</h2>
+                <p>Countries Recognized</p>
+            </div>
+            <div class="stat-box">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h2>1,250+</h2>
+                <p>Certified Graduates</p>
+            </div>
+            <div class="stat-box">
+                <i class="fa-solid fa-briefcase"></i>
+                <h2>88%</h2>
+                <p>Hired within 6 Months</p>
+            </div>
+            <div class="stat-box">
+                <i class="fa-solid fa-building-shield"></i>
+                <h2>40+</h2>
+                <p>Hiring Partner Firms</p>
+            </div>
+        </div>
+
+        <div class="global-banner">
+            <div class="global-text">
+                <h3><i class="fa-solid fa-award"></i> Internationally Recognized Accreditation</h3>
+                <p>THE HIVE Academy certifications and training programs are accredited and accepted by enterprise cybersecurity firms and defense contractors across <strong>18 countries worldwide</strong>.</p>
+            </div>
+            <div class="global-badge">
+                <h4>18 Countries</h4>
+                <span>Global Accreditation</span>
+            </div>
+        </div>
+
+        <h2 class="section-title">Specialized Certification Tracks</h2>
+        <p class="section-subtitle">Hands-on, lab-simulated training programs designed by active security architects.</p>
+
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Ethical Hacking">
+                <div class="card-body">
+                    <h3>Red Team - Ethical Hacking</h3>
+                    <p>Master Penetration Testing, Vulnerability Assessments, Exploitation Techniques, and Web Application Security through real live offensive labs.</p>
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-clock"></i> 60 Hours</span>
+                        <span><i class="fa-solid fa-layer-group"></i> Intermediate - Advanced</span>
+                    </div>
+                    <a href="#apply-form" class="btn-apply">Enroll in Track →</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=600&q=80" alt="SOC Analyst">
+                <div class="card-body">
+                    <h3>Blue Team - SOC Security Analyst</h3>
+                    <p>Learn 24/7 Security Operations Center workflow, Incident Response, Digital Forensics, and Threat Detection using enterprise SIEM suites.</p>
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-clock"></i> 45 Hours</span>
+                        <span><i class="fa-solid fa-layer-group"></i> Beginner - Intermediate</span>
+                    </div>
+                    <a href="#apply-form" class="btn-apply">Enroll in Track →</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80" alt="Cloud Security">
+                <div class="card-body">
+                    <h3>Cloud Security Architecture</h3>
+                    <p>Build zero-trust cloud environments, audit AWS/Azure infrastructure configurations, and secure enterprise networks against modern breaches.</p>
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-clock"></i> 40 Hours</span>
+                        <span><i class="fa-solid fa-layer-group"></i> Advanced</span>
+                    </div>
+                    <a href="#apply-form" class="btn-apply">Enroll in Track →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="careers-section">
+            <span class="badge-open">🟢 WE ARE HIRING NOW</span>
+            <h2>Active Openings: Blue Team Division</h2>
+            <p style="color: var(--gray-text);">THE HIVE is recruiting certified Blue Team specialists to join our active 24/7 Security Operations Center (SOC).</p>
+
+            <div class="job-card">
+                <div class="job-info">
+                    <h4>Junior SOC Analyst (Tier 1) - Blue Team</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> On-site / Hybrid | Full-time | Experience: 0-2 Years</p>
+                </div>
+                <a href="#apply-form" class="btn-apply" style="padding: 10px 20px;">Apply for Job →</a>
+            </div>
+
+            <div class="job-card">
+                <div class="job-info">
+                    <h4>Incident Response & Digital Forensics Specialist</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Full-time | Experience: 3+ Years in Incident Handling</p>
+                </div>
+                <a href="#apply-form" class="btn-apply" style="padding: 10px 20px;">Apply for Job →</a>
+            </div>
+        </div>
+
+        <div class="form-section" id="apply-form">
+            <h2 style="color: var(--primary-blue); margin-top: 0;">Application & CV Submission</h2>
+            <p style="color: var(--gray-text); margin-bottom: 25px;">Complete your details below and upload your Resume/CV to enroll in a track or apply for Blue Team vacancies.</p>
+
+            <form onsubmit="alert('Thank you! Your application and CV have been successfully submitted to THE HIVE HR team.'); return false;">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="e.g. Arwa Ahmed" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone / WhatsApp Number</label>
+                    <input type="tel" placeholder="+20 100 000 0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Application Purpose</label>
+                    <select required>
+                        <option value="">Select Purpose...</option>
+                        <option>Apply for Job: Junior SOC Analyst (Blue Team Tier 1)</option>
+                        <option>Apply for Job: Incident Response Specialist (Blue Team Tier 2)</option>
+                        <option>Enroll in Course: Red Team - Ethical Hacking</option>
+                        <option>Enroll in Course: Blue Team - SOC Analyst</option>
+                        <option>Enroll in Course: Cloud Security Architecture</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload CV / Resume (PDF or DOCX)</label>
+                    <div class="file-upload-box">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <p style="margin: 0; font-weight: bold;">Click to select file or drag & drop CV here</p>
+                        <small style="color: var(--gray-text);">Supported formats: PDF, DOCX (Max: 5MB)</small>
+                        <input type="file" accept=".pdf,.docx" style="margin-top: 15px;" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Brief Cover Note / Experience Summary</label>
+                    <textarea rows="4" placeholder="Mention your certifications (CEH, Security+, EJPT) or relevant project experience..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-apply" style="width: 100%; border: none; font-size: 16px; cursor: pointer;">Submit Application & Resume</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 THE HIVE Academy & Security Operations. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

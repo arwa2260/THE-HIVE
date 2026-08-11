@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE HIVE | Enterprise Cybersecurity & Threat Intelligence</title>
+    <title>THE HIVE | Global Cybersecurity & Academy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -16,130 +16,81 @@
             --border-color: #e2e8f0;
         }
 
-        body {
-            background-color: var(--bg-light);
-            color: var(--dark-navy);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0; padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Top Header Bar */
-        .top-bar {
-            background-color: var(--dark-navy);
-            color: #94a3b8;
-            padding: 8px 5%;
-            font-size: 13px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .lang-btn {
-            background-color: var(--primary-blue);
-            color: white; border: none;
-            padding: 5px 14px; border-radius: 4px;
-            cursor: pointer; font-weight: bold; font-size: 12px;
-            transition: 0.3s;
-        }
+        body { background-color: var(--bg-light); color: var(--dark-navy); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
+        
+        /* Top Bar */
+        .top-bar { background-color: var(--dark-navy); color: #94a3b8; padding: 10px 5%; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+        .lang-btn { background-color: var(--primary-blue); color: white; border: none; padding: 6px 16px; border-radius: 4px; cursor: pointer; font-weight: bold; transition: 0.3s; }
         .lang-btn:hover { background-color: var(--hover-blue); }
 
-        /* Navbar */
-        header {
-            background-color: var(--white);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky; top: 0; z-index: 1000;
-        }
-
-        .navbar {
-            max-width: 1200px; margin: 0 auto;
-            display: flex; justify-content: space-between;
-            align-items: center; padding: 12px 20px;
-        }
-
+        /* Header & Navbar */
+        header { background-color: var(--white); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
+        .navbar { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; }
         .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
         .logo-text { font-size: 24px; font-weight: 800; color: var(--dark-navy); line-height: 0.9; }
         .logo-text span { font-size: 11px; color: var(--primary-blue); letter-spacing: 2px; }
-
-        nav a { color: var(--dark-navy); text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 14px; }
+        nav a { color: var(--dark-navy); text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 14px; transition: 0.3s; }
         nav a:hover { color: var(--primary-blue); }
         .btn-nav { background-color: var(--primary-blue); color: white !important; padding: 10px 18px; border-radius: 6px; }
 
-        /* Hero Banner */
+        /* Hero Section with Image */
         .hero {
             background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
                         url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center;
-            color: white; padding: 90px 20px; text-align: center;
+            background-size: cover; background-position: center; color: white; padding: 90px 20px; text-align: center;
         }
-
-        .hero h1 { font-size: 42px; margin-bottom: 15px; }
+        .hero h1 { font-size: 42px; margin-bottom: 15px; font-weight: 800; }
         .hero h1 span { color: #38bdf8; }
-        .hero p { font-size: 18px; max-width: 750px; margin: 0 auto 30px; color: #cbd5e1; line-height: 1.6; }
-        
-        .btn-hero { background-color: var(--primary-blue); color: white; padding: 14px 30px; border-radius: 6px; text-decoration: none; font-weight: bold; }
+        .hero p { font-size: 18px; max-width: 800px; margin: 0 auto 30px; color: #cbd5e1; line-height: 1.6; }
+        .hero-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn-hero { background-color: var(--primary-blue); color: white; padding: 14px 30px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-hero-outline { background-color: transparent; border: 2px solid #38bdf8; color: #38bdf8; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-hero:hover { background-color: var(--hover-blue); }
+        .btn-hero-outline:hover { background-color: rgba(56, 189, 248, 0.1); }
 
-        /* Stats Section */
-        .stats {
-            display: flex; justify-content: space-around;
-            background: white; padding: 30px 20px;
-            max-width: 1000px; margin: -40px auto 50px;
-            border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            text-align: center;
-        }
+        .container { max-width: 1150px; margin: 0 auto; padding: 0 20px; }
 
-        .stat-item h2 { color: var(--primary-blue); font-size: 32px; margin: 0; }
-        .stat-item p { color: var(--gray-text); margin: 5px 0 0; font-size: 14px; font-weight: 600; }
+        /* Global Recognition & Stats Bar */
+        .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; background: white; border: 1px solid var(--border-color); padding: 35px 20px; border-radius: 12px; margin: -40px auto 50px; position: relative; z-index: 10; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+        .stat-box i { font-size: 34px; color: var(--primary-blue); margin-bottom: 10px; }
+        .stat-box h2 { font-size: 32px; margin: 0; color: var(--dark-navy); font-weight: 800; }
+        .stat-box p { margin: 6px 0 0; color: var(--gray-text); font-size: 14px; font-weight: 600; }
 
-        /* About Section */
-        .about-section { max-width: 1100px; margin: 60px auto; padding: 0 20px; text-align: center; }
-        .about-section h2 { font-size: 30px; color: var(--dark-navy); margin-bottom: 15px; }
-        .about-section p { font-size: 16px; color: var(--gray-text); line-height: 1.8; max-width: 850px; margin: 0 auto 30px; }
+        /* Global Accreditation Section */
+        .global-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; border-radius: 16px; padding: 45px; margin-bottom: 60px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+        .global-info { max-width: 650px; }
+        .global-info h2 { font-size: 30px; margin: 0 0 15px; color: #38bdf8; }
+        .global-info p { font-size: 16px; color: #cbd5e1; line-height: 1.7; margin: 0; }
+        .global-badge { background: rgba(56, 189, 248, 0.12); border: 2px solid #38bdf8; padding: 25px 35px; border-radius: 12px; text-align: center; }
+        .global-badge h3 { margin: 0; font-size: 36px; color: white; font-weight: 800; }
+        .global-badge span { font-size: 13px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
 
-        /* Infinite Moving Slider (Carousel) */
-        .carousel-container {
-            overflow: hidden; background: white; padding: 40px 0;
-            border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);
-        }
+        /* Academy & Courses Highlights */
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header h2 { font-size: 30px; color: var(--dark-navy); margin-bottom: 10px; }
+        .section-header p { font-size: 16px; color: var(--gray-text); max-width: 700px; margin: 0 auto; }
 
-        .carousel-title { text-align: center; margin-bottom: 25px; font-size: 22px; color: var(--dark-navy); }
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .course-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.3s; }
+        .course-card:hover { transform: translateY(-6px); }
+        .course-card img { width: 100%; height: 210px; object-fit: cover; }
+        .course-content { padding: 22px; }
+        .course-content h3 { font-size: 20px; color: var(--dark-navy); margin: 0 0 10px; }
+        .course-content p { color: var(--gray-text); font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+        .btn-card { display: inline-block; background: var(--primary-blue); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 13px; }
 
-        .carousel-track {
-            display: flex; gap: 30px; width: max-content;
-            animation: scroll 20s linear infinite;
-        }
+        /* Certifications Footer Bar */
+        .certs-section { background: #f1f5f9; padding: 40px 20px; text-align: center; border-radius: 12px; margin-bottom: 60px; }
+        .certs-grid { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 20px; }
+        .cert-badge { background: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-weight: bold; color: var(--dark-navy); font-size: 15px; }
 
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .service-card-mini {
-            background: var(--bg-light); border: 1px solid var(--border-color);
-            padding: 20px; border-radius: 8px; width: 250px; text-align: center;
-        }
-        .service-card-mini i { font-size: 30px; color: var(--primary-blue); margin-bottom: 10px; }
-        .service-card-mini h4 { margin: 5px 0; font-size: 16px; }
-
-        /* Certifications & Badges */
-        .certs-section { background: #f1f5f9; padding: 50px 20px; text-align: center; }
-        .certs-grid {
-            display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px;
-        }
-        .cert-badge {
-            background: white; padding: 20px 30px; border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-weight: bold; color: var(--dark-navy);
-            display: flex; align-items: center; gap: 10px;
-        }
-        .cert-badge i { color: #16a34a; font-size: 20px; }
-
-        footer { background: var(--dark-navy); color: #94a3b8; text-align: center; padding: 30px; font-size: 14px; }
+        footer { background: var(--dark-navy); color: #94a3b8; text-align: center; padding: 25px; font-size: 14px; }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        <div><i class="fa-solid fa-shield-halved"></i> 24/7 Security Operations Center (SOC) | Hotline: <strong>19808</strong></div>
+        <div><i class="fa-solid fa-shield-halved"></i> 24/7 Security Operations Center | Hotline: <strong>19808</strong></div>
         <button class="lang-btn" onclick="toggleLanguage()"><i class="fa-solid fa-globe"></i> <span id="lang-btn-text">العربية</span></button>
     </div>
 
@@ -158,55 +109,101 @@
             <nav>
                 <a href="index.html" data-key="nav_home">Home</a>
                 <a href="services.html" data-key="nav_services">Contract Services</a>
-                <a href="courses.html" data-key="nav_courses">Academy & Jobs</a>
+                <a href="courses.html" data-key="nav_courses">Academy & Careers</a>
                 <a href="services.html" class="btn-nav" data-key="nav_apply">Request Service →</a>
             </nav>
         </div>
     </header>
 
     <section class="hero">
-        <h1 data-key="hero_title">Next-Gen Cyber Defense & <span>Threat Intelligence</span></h1>
-        <p data-key="hero_desc">THE HIVE safeguards critical digital infrastructure with elite penetration testing, SOC monitoring, and dedicated cybersecurity staffing.</p>
-        <a href="services.html" class="btn-hero" data-key="hero_btn">Get Contracted Services</a>
-    </section>
-
-    <div class="stats">
-        <div class="stat-item"><h2>99.9%</h2><p data-key="stat1">Threat Prevention</p></div>
-        <div class="stat-item"><h2>250+</h2><p data-key="stat2">Enterprise Clients</p></div>
-        <div class="stat-item"><h2>24/7</h2><p data-key="stat3">Active Surveillance</p></div>
-        <div class="stat-item"><h2>50+</h2><p data-key="stat4">Certified Experts</p></div>
-    </div>
-
-    <section class="about-section">
-        <h2 data-key="about_title">Who We Are</h2>
-        <p data-key="about_desc">At THE HIVE, we combine cutting-edge AI surveillance with specialized human expertise. We protect governments, financial institutions, and enterprise networks against modern cyber threats, ransomware, and zero-day vulnerabilities.</p>
-    </section>
-
-    <div class="carousel-container">
-        <h3 class="carousel-title" data-key="carousel_title">Our Core Competencies</h3>
-        <div class="carousel-track">
-            <div class="service-card-mini"><i class="fa-solid fa-bug"></i><h4>Penetration Testing</h4></div>
-            <div class="service-card-mini"><i class="fa-solid fa-eye"></i><h4>24/7 SOC Monitoring</h4></div>
-            <div class="service-card-mini"><i class="fa-solid fa-user-shield"></i><h4>Cyber Staffing</h4></div>
-            <div class="service-card-mini"><i class="fa-solid fa-lock"></i><h4>Data Encryption</h4></div>
-            <div class="service-card-mini"><i class="fa-solid fa-network-wired"></i><h4>Network Defense</h4></div>
-            <div class="service-card-mini"><i class="fa-solid fa-bug"></i><h4>Penetration Testing</h4></div>
-            <div class="service-card-mini"><i class="fa-solid fa-eye"></i><h4>24/7 SOC Monitoring</h4></div>
-            <div class="service-card-mini"><i class="fa-solid fa-user-shield"></i><h4>Cyber Staffing</h4></div>
-            <div class="service-card-mini"><i class="fa-solid fa-lock"></i><h4>Data Encryption</h4></div>
-            <div class="service-card-mini"><i class="fa-solid fa-network-wired"></i><h4>Network Defense</h4></div>
-        </div>
-    </div>
-
-    <section class="certs-section">
-        <h2 data-key="certs_title">Accreditations & Compliance</h2>
-        <div class="certs-grid">
-            <div class="cert-badge"><i class="fa-solid fa-circle-check"></i> ISO 27001 Certified</div>
-            <div class="cert-badge"><i class="fa-solid fa-circle-check"></i> SOC2 Type II Compliant</div>
-            <div class="cert-badge"><i class="fa-solid fa-circle-check"></i> CREST Accredited</div>
-            <div class="cert-badge"><i class="fa-solid fa-circle-check"></i> EC-Council Partner</div>
+        <h1 data-key="hero_title">Enterprise Cybersecurity & <span>Global Academy</span></h1>
+        <p data-key="hero_desc">THE HIVE protects enterprise infrastructure while empowering the next generation of cybersecurity leaders with certified, highly diverse training tracks.</p>
+        <div class="hero-btns">
+            <a href="services.html" class="btn-hero" data-key="hero_btn_1">Cybersecurity Services</a>
+            <a href="courses.html" class="btn-hero-outline" data-key="hero_btn_2">Explore Academy Tracks</a>
         </div>
     </section>
+
+    <div class="container">
+
+        <div class="stats-bar">
+            <div class="stat-box">
+                <i class="fa-solid fa-earth-americas"></i>
+                <h2>18</h2>
+                <p data-key="stat_countries">Countries Recognized</p>
+            </div>
+            <div class="stat-box">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h2>1,250+</h2>
+                <p data-key="stat_grads">Certified Graduates</p>
+            </div>
+            <div class="stat-box">
+                <i class="fa-solid fa-user-shield"></i>
+                <h2>24/7</h2>
+                <p data-key="stat_soc">SOC Monitoring</p>
+            </div>
+            <div class="stat-box">
+                <i class="fa-solid fa-award"></i>
+                <h2>100%</h2>
+                <p data-key="stat_cert">Accredited Programs</p>
+            </div>
+        </div>
+
+        <div class="global-section">
+            <div class="global-info">
+                <h2 data-key="global_title"><i class="fa-solid fa-globe"></i> Globally Recognized & Accredited</h2>
+                <p data-key="global_desc">THE HIVE is proudly recognized across <strong>18 countries worldwide</strong>. Our cybersecurity solutions, audit reports, and training certifications adhere to international standards trusted by defense institutions and multinational enterprise networks.</p>
+            </div>
+            <div class="global-badge">
+                <h3>18</h3>
+                <span data-key="global_badge">Countries Worldwide</span>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2 data-key="courses_header_title">Diverse & Accredited Academy Programs</h2>
+            <p data-key="courses_header_desc">From offensive ethical hacking to defensive SOC operations, our extensive course catalog is designed to turn students into employment-ready cybersecurity experts.</p>
+        </div>
+
+        <div class="courses-grid">
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Ethical Hacking">
+                <div class="course-content">
+                    <h3 data-key="course1_title">Red Team - Ethical Hacking</h3>
+                    <p data-key="course1_desc">Comprehensive penetration testing, web vulnerability exploitation, and offensive tactics simulation in live labs.</p>
+                    <a href="courses.html" class="btn-card" data-key="btn_learn_more">View Details & Apply →</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=600&q=80" alt="SOC Analyst">
+                <div class="course-content">
+                    <h3 data-key="course2_title">Blue Team - SOC Security Analyst</h3>
+                    <p data-key="course2_desc">Master incident handling, threat hunting, digital forensics, and Splunk SIEM operations for 24/7 network defense.</p>
+                    <a href="courses.html" class="btn-card" data-key="btn_learn_more">View Details & Apply →</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80" alt="Cloud Security">
+                <div class="course-content">
+                    <h3 data-key="course3_title">Cloud Security Architecture</h3>
+                    <p data-key="course3_desc">Learn zero-trust architecture, multi-cloud protection (AWS/Azure), and devsecops pipeline hardening.</p>
+                    <a href="courses.html" class="btn-card" data-key="btn_learn_more">View Details & Apply →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="certs-section">
+            <h2 data-key="certs_title" style="margin-top:0; color: var(--dark-navy);">Our Enterprise Standards & Accreditations</h2>
+            <div class="certs-grid">
+                <div class="cert-badge"><i class="fa-solid fa-circle-check" style="color:#16a34a;"></i> ISO 27001 Certified</div>
+                <div class="cert-badge"><i class="fa-solid fa-circle-check" style="color:#16a34a;"></i> SOC2 Type II Compliant</div>
+                <div class="cert-badge"><i class="fa-solid fa-circle-check" style="color:#16a34a;"></i> CREST Accredited</div>
+            </div>
+        </div>
+
+    </div>
 
     <footer>
         <p data-key="footer">&copy; 2026 THE HIVE Cybersecurity Solutions. All Rights Reserved.</p>
@@ -215,24 +212,46 @@
     <script>
         const translations = {
             en: {
-                nav_home: "Home", nav_services: "Contract Services", nav_courses: "Academy & Jobs", nav_apply: "Request Service →",
-                hero_title: 'Next-Gen Cyber Defense & <span>Threat Intelligence</span>',
-                hero_desc: "THE HIVE safeguards critical digital infrastructure with elite penetration testing, SOC monitoring, and dedicated cybersecurity staffing.",
-                hero_btn: "Get Contracted Services",
-                stat1: "Threat Prevention", stat2: "Enterprise Clients", stat3: "Active Surveillance", stat4: "Certified Experts",
-                about_title: "Who We Are", about_desc: "At THE HIVE, we combine cutting-edge AI surveillance with specialized human expertise to protect enterprise networks against modern cyber threats.",
-                carousel_title: "Our Core Competencies", certs_title: "Accreditations & Compliance",
+                nav_home: "Home", nav_services: "Contract Services", nav_courses: "Academy & Careers", nav_apply: "Request Service →",
+                hero_title: 'Enterprise Cybersecurity & <span>Global Academy</span>',
+                hero_desc: "THE HIVE protects enterprise infrastructure while empowering the next generation of cybersecurity leaders with certified, highly diverse training tracks.",
+                hero_btn_1: "Cybersecurity Services", hero_btn_2: "Explore Academy Tracks",
+                stat_countries: "Countries Recognized", stat_grads: "Certified Graduates", stat_soc: "SOC Monitoring", stat_cert: "Accredited Programs",
+                global_title: '<i class="fa-solid fa-globe"></i> Globally Recognized & Accredited',
+                global_desc: "THE HIVE is proudly recognized across <strong>18 countries worldwide</strong>. Our cybersecurity solutions, audit reports, and training certifications adhere to international standards trusted by defense institutions and enterprise networks.",
+                global_badge: "Countries Worldwide",
+                courses_header_title: "Diverse & Accredited Academy Programs",
+                courses_header_desc: "From offensive ethical hacking to defensive SOC operations, our extensive course catalog is designed to turn students into employment-ready cybersecurity experts.",
+                course1_title: "Red Team - Ethical Hacking",
+                course1_desc: "Comprehensive penetration testing, web vulnerability exploitation, and offensive tactics simulation in live labs.",
+                course2_title: "Blue Team - SOC Security Analyst",
+                course2_desc: "Master incident handling, threat hunting, digital forensics, and Splunk SIEM operations for 24/7 network defense.",
+                course3_title: "Cloud Security Architecture",
+                course3_desc: "Learn zero-trust architecture, multi-cloud protection (AWS/Azure), and devsecops pipeline hardening.",
+                btn_learn_more: "View Details & Apply →",
+                certs_title: "Our Enterprise Standards & Accreditations",
                 footer: "© 2026 THE HIVE Cybersecurity Solutions. All Rights Reserved."
             },
             ar: {
-                nav_home: "الرئيسية", nav_services: "خدمات عقود الحماية", nav_courses: "الأكاديمية والتوظيف", nav_apply: "طلب خدمة ←",
-                hero_title: 'الحماية السيبرانية المتقدمة و <span>استخبارات التهديدات</span>',
-                hero_desc: "تؤمن THE HIVE البنية التحتية الرقمية للشركات من خلال اختبارات الاختراق المتقدمة ومراقبة SOC على مدار الساعة وتوفير الكوادر الأمنية.",
-                hero_btn: "طلب عقد خدمة حماية",
-                stat1: "نسبة منع التهديدات", stat2: "عميل من كبرى الشركات", stat3: "مراقبة مستمرة 24/7", stat4: "خبير أمني معتمد",
-                about_title: "من نحن", about_desc: "في THE HIVE، ندمج بين تقنيات الذكاء الاصطناعي والخبرات البشرية لتأمين الهيئات والشركات ضد الهجمات السيبرانية وبرمجيات الفدية.",
-                carousel_title: "خدماتنا المتقدمة", certs_title: "الاعتمادات وشواهد الجودة العالمية",
-                footer: "© 2026 THE HIVE للحلول الأمنية. جميع الحقوق محفوظة."
+                nav_home: "الرئيسية", nav_services: "خدمات الحماية", nav_courses: "الأكاديمية والتوظيف", nav_apply: "طلب خدمة ←",
+                hero_title: 'الأمان السيبراني للشركات و <span>الأكاديمية العالمية</span>',
+                hero_desc: "تؤمن منصة THE HIVE البنية التحتية للشركات، وتؤهل جيل المستقبل من خبراء الأمن السيبراني عبر دورات متنوعة ومعتمدة دولياً.",
+                hero_btn_1: "خدمات الحماية السيبرانية", hero_btn_2: "استكشف دورات الأكاديمية",
+                stat_countries: "دولة معترف بنا فيها", stat_grads: "خريج معتمد", stat_soc: "مراقبة أمنية 24/7", stat_cert: "برامج معتمدة 100%",
+                global_title: '<i class="fa-solid fa-globe"></i> معترف بنا دولياً ومعتمدون رسمياً',
+                global_desc: "تفتخر THE HIVE بالاعتراف الرسمي بخدماتها وشهاداتها التدريبية في أكثر من <strong>18 دولة حول العالم</strong>. تخضع برامجنا وتعاريفنا لأعلى المعايير الأمنية الدولية المعتمدة لدى كبرى المؤسسات.",
+                global_badge: "دولة حول العالم",
+                courses_header_title: "دورات تدريبية متنوعة ومعتمدة",
+                courses_header_desc: "نقدم تشكيلة واسعة ومتنوعة من الدورات التدريبية المعتمدة في مجالات الهجوم والدفاع والأمن السحابي لتهيئتك لسوق العمل مباشرة.",
+                course1_title: "الفريق الأحمر - الاختراق الأخلاقي",
+                course1_desc: "اختبارات الاختراق المتقدمة، ثغرات المواقع، وتكتيكات الهجوم السيبراني في بيئات محاكاة حية.",
+                course2_title: "الفريق الأزرق - محلل مركز العمليات SOC",
+                course2_desc: "التعامل مع الحوادث الأمنية، صيد التهديدات، والتحقيق الجنائي الرقمي باستخدام أنظمة SIEM العالمية.",
+                course3_title: "حماية الأنظمة السحابية (Cloud Security)",
+                course3_desc: "تأمين البيئات السحابية AWS و Azure وتطبيق معماريات Zero-Trust لحماية شبكات الشركات.",
+                btn_learn_more: "التفاصيل والتقديم ←",
+                certs_title: "الاعتمادات والمعايير الدولية للشركة",
+                footer: "© 2026 THE HIVE للحلول الأمنية والأكاديمية. جميع الحقوق محفوظة."
             }
         };
 
